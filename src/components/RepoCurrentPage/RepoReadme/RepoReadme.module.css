@@ -1,0 +1,12 @@
+.readme_cont {
+   display: flex;
+}
+.pre {
+   max-width: 100%;
+   white-space: pre-wrap;
+   word-wrap: break-word;
+}
+
+.pre img {
+   max-width: 100%;
+}

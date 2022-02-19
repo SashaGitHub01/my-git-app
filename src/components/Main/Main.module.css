@@ -1,0 +1,17 @@
+.main {
+   padding: 40px;
+   flex: 1 1 auto;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   align-items: center;
+}
+
+.content {
+   max-width: 1080px;
+   flex: 1 1 auto;
+   background-color: #fff;
+   display: flex;
+   position: relative;
+   width: 100%;
+}

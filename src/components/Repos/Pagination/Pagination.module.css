@@ -1,0 +1,18 @@
+.pages {
+   display: flex;
+   justify-content: center;
+   padding: 15px 0;
+   align-items: end;
+}
+.page {
+   margin-right: 15px;
+   font-size: 16px;
+   padding: 5px 5px;
+   background-color: rgb(147, 223, 169);
+   color: #ffffff;
+   cursor: pointer;
+}
+
+.page_active {
+   border: 1px solid rgb(83, 83, 83);
+}

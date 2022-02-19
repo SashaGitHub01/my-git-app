@@ -1,0 +1,42 @@
+.indicator {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+}
+.users {
+   width: 100%;
+}
+.users_column {
+   padding: 0px 0px 45px 0px;
+}
+.users_item {
+   display: flex;
+   padding: 20px;
+   border: 1px solid rgb(117, 117, 117);
+}
+.item_name {
+   padding: 10px 0px 0px 10px;
+   flex: 1 1 auto;
+}
+
+.item_name a {
+   font-size: 18px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.item_img {
+   flex: 0 1 80px;
+}
+
+.item_img img {
+   max-width: 100%;
+   display: block;
+   border-radius: 50%;
+}
+
+.item_loc {
+   font-size: 14px;
+   color: rgb(109, 109, 109);
+   line-height: 32px;
+}

@@ -1,0 +1,15 @@
+.my_button {
+   background-color: rgb(162, 247, 188);
+   font-size: 16px;
+   text-align: center;
+   padding: 0 15px;
+   color: #fff;
+   line-height: 32px;
+   font-weight: bold;
+   cursor: pointer;
+   border-radius: 15px;
+}
+
+.my_button_invert {
+   background-color: rgb(255, 133, 133);
+}

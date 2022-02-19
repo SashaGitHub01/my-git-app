@@ -1,0 +1,84 @@
+.repos_item {
+   padding: 25px 15px 20px 15px;
+   border: 1px solid rgb(139, 139, 139);
+   display: flex;
+   align-items: center;
+}
+.repos_content {
+   flex: 1 1 auto;
+   margin-right: 15px;
+}
+.repos_title {
+   margin-bottom: 10px;
+   display: flex;
+}
+
+.repos_title_t {
+   font-size: 18px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.repos_stars {
+   color: rgb(243, 153, 94);
+   font-size: 15px;
+   display: flex;
+   align-items: center;
+}
+.repos_star_icon {
+   font-size: 20px;
+   margin-right: 5px;
+   cursor: pointer;
+}
+
+.watchers_count {
+   display: inline-block;
+   line-height: 20px;
+}
+
+.repos_stars {
+   margin-left: 10px;
+}
+
+.repos_body {
+   line-height: 22px;
+   font-size: 16px;
+}
+
+.repos_info {
+   display: flex;
+   margin-top: 10px;
+}
+
+.repos_lang {
+   color: rgb(243, 153, 94);
+   line-height: 24px;
+   margin-right: 7px;
+}
+
+.repos_tags {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.repos_tag {
+   padding: 0 8px;
+   line-height: 24px;
+   border-radius: 20px;
+   background-color: rgb(224, 224, 224);
+   border: 1px solid rgb(143, 143, 143);
+   margin-right: 7px;
+   font-size: 12px;
+   cursor: pointer;
+}
+
+.repos_tag:hover {
+   background-color: rgb(187, 187, 187);
+}
+
+.repos_owner {
+   display: flex;
+   align-items: end;
+   font-size: 16px;
+   color: rgb(88, 88, 88);
+}

@@ -1,0 +1,31 @@
+.repo_description_body {
+   padding: 15px 0;
+   display: flex;
+   align-items: center;
+}
+
+.repo_description_text {
+   font-size: 16px;
+   line-height: 24px;
+}
+
+.empty {
+   display: flex;
+   align-items: center;
+}
+
+.empty_text {
+   font-size: 18px;
+   color: rgb(139, 139, 139);
+   line-height: 24px;
+}
+.edit_icon {
+   font-size: 18px;
+   color: rgb(139, 139, 139);
+   cursor: pointer;
+   margin-left: 7px;
+}
+
+.edit_icon:hover {
+   color: rgb(31, 31, 31);
+}

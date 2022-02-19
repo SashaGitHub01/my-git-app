@@ -1,0 +1,18 @@
+.title {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.title_text {
+   margin-right: 8px;
+}
+
+.edit_icon {
+   color: rgba(126, 126, 126, 0.4);
+}
+
+.edit_icon:hover {
+   color: rgb(36, 36, 36);
+   cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.title_repo {
+   text-align: center;
+   font-size: 24px;
+   font-weight: bold;
+   padding: 20px 0;
+}
+
+.main_title {
+   font-size: 25px;
+   padding: 15px;
+   color: rgb(85, 85, 85);
+   font-weight: bold;
+}

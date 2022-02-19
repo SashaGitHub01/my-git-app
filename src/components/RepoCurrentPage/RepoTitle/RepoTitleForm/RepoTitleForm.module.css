@@ -1,0 +1,11 @@
+.field_cont {
+}
+.field_title {
+   font-size: 16px;
+   line-height: 32px;
+   font-weight: 400;
+   text-align: left;
+}
+.field {
+   width: 100%;
+}

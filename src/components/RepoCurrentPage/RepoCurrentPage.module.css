@@ -1,0 +1,14 @@
+.repo_page {
+   padding: 25px;
+   position: relative;
+   width: 100%;
+}
+.repo_content {
+}
+.repo_info {
+}
+
+.repo_tab_content {
+   border: 1px solid rgb(102, 102, 102);
+   padding: 40px 20px;
+}

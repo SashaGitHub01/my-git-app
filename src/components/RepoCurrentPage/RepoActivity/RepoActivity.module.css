@@ -1,0 +1,42 @@
+.repo_activity {
+}
+.activity_cont {
+   display: flex;
+   justify-content: center;
+}
+
+.activity {
+   border: 2px solid rgb(100, 100, 100);
+   padding: 25px 20px;
+   display: flex;
+}
+
+.activity_days {
+   padding-right: 20px;
+}
+.day {
+   margin-bottom: 15px;
+}
+
+.day:last-child {
+   margin: 0;
+}
+
+.activity_column {
+   margin-right: 25px;
+}
+
+.activity_column:last-child {
+   margin: 0;
+}
+
+.activity_item {
+   width: 14px;
+   height: 14px;
+   border: 1px solid rgb(95, 95, 95);
+   margin: 0px 0px 15px 0px;
+}
+
+.activity_item:last-child {
+   margin: 0;
+}

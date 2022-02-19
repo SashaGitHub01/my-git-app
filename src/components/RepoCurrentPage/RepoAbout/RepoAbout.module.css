@@ -1,0 +1,80 @@
+.repo_owner_img {
+   width: 150px;
+}
+
+.repo_owner_img img {
+   max-width: 100%;
+   display: block;
+   border: 2px solid rgb(148, 148, 148);
+}
+
+.repo_about {
+   padding-left: 25px;
+   flex: 1 1 80%;
+}
+.repo_owner_about {
+   display: flex;
+   padding: 15px 0;
+   margin-bottom: 20px;
+}
+.repo_about_item {
+   font-size: 16px;
+   line-height: 28px;
+}
+
+.repo_about_lang {
+   color: rgb(231, 143, 42);
+}
+
+.repo_topics {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.repo_topic {
+   color: rgb(34, 74, 206);
+   cursor: pointer;
+   margin-right: 10px;
+   font-size: 12px;
+}
+
+.repo_stars {
+}
+.stars_count {
+   display: flex;
+   align-items: center;
+}
+
+.star_icon {
+   color: rgb(240, 142, 51);
+   font-size: 24px;
+   margin-right: 5px;
+   cursor: pointer;
+}
+
+.repo_delete_btn {
+   background-color: rgb(211, 104, 104);
+   color: #fff;
+   border-radius: 20px;
+   cursor: pointer;
+   padding: 0 10px;
+   line-height: 20px;
+}
+
+.repo_del {
+   line-height: 24px;
+   display: flex;
+   align-items: center;
+   position: relative;
+}
+
+.repo_del_name {
+   padding: 0px 0px 0px 24px;
+}
+
+.repo_del_icon {
+   font-size: 18px;
+   position: absolute;
+   top: 55%;
+   transform: translateY(-50%);
+}
