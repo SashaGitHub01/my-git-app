@@ -7,7 +7,6 @@ import UsersService from "../../API/UsersService";
 
 import Loader from '../Loader/Loader';
 import UsersForm from './UsersForm/UsersForm';
-import MyButton from "../../UI/MyButton/MyButton";
 import SmallLoader from "../SmallLoader/SmallLoader";
 
 const Users = () => {

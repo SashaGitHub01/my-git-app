@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { Redirect, useParams, useRouteMatch } from "react-router";
 import { useQuery } from "react-query";
 import ReposService from "../../API/ReposService";
-import { Switch, Route } from "react-router";
-
+import { Routes, Route, useParams, useNavigate, useMatch } from "react-router-dom";
 import styles from './RepoCurrentPage.module.css';
-import title from '../../commonStyles/title.module.css'
 
 import Loader from '../../components/Loader/Loader';
 import RepoLangsInfo from "./RepoLangsInfo/RepoLangsInfo";
@@ -21,13 +18,18 @@ import { useAuth } from "../../hooks/useAuth";
 import { useEffect } from "react";
 
 const ReposCurrentPage = () => {
+   const nav = useNavigate()
    const [isOwner, setIsOwner] = useState(false)
    const [descr, setDescr] = useState('');
    const [repoName, setRepoName] = useState('');
 
    const { user: me } = useAuth()
-   const { path, url } = useRouteMatch();
    const { ownerLogin, repo } = useParams();
+   const match = useMatch('/:ownerLogin/:repo/*')
+
+   useEffect(() => {
+      if (match.params['*'] === '') nav(`tab/code`)
+   }, [match.params])
 
    const {
       data,
@@ -41,6 +43,8 @@ const ReposCurrentPage = () => {
 
          return res;
       },
+
+      { refetchOnWindowFocus: false }
    )
 
    useEffect(() => {
@@ -72,48 +76,45 @@ const ReposCurrentPage = () => {
             repo={repo}
          />
          <div className={styles.repo_tab_content}>
-            <Switch>
-               <Route exact path={`${path}`}>
-                  <Redirect to={`${url}/tab/code`} />
-               </Route>
-               <Route exact path={`${path}/tab/description`}>
+            <Routes>
+               <Route path={`tab/description`} element={(
                   <RepoDescription
                      description={descr}
                      isOwner={isOwner}
                      updateDescription={setDescr}
                   />
-               </Route>
-               <Route exact path={`${path}/tab/languages`}>
+               )} />
+               <Route path={`tab/languages`} element={(
                   <RepoLangsInfo
                      ownerLogin={ownerLogin}
                      repo={repo}
                   />
-               </Route>
-               <Route exact path={`${path}/tab/contributors`}>
+               )} />
+               <Route path={`tab/contributors`} element={(
                   <RepoContrs
                      ownerLogin={ownerLogin}
                      repo={repo}
                   />
-               </Route>
-               <Route exact path={`${path}/tab/activity`}>
+               )} />
+               <Route path={`tab/activity`} element={
                   <RepoActivity
                      ownerLogin={ownerLogin}
                      repo={repo}
                   />
-               </Route>
-               <Route exact path={`${path}/tab/readme`}>
+               } />
+               <Route path={`tab/readme`} element={
                   <RepoReadme
                      ownerLogin={ownerLogin}
                      repo={repo}
                   />
-               </Route>
-               <Route path={`${path}/tab/code`}>
+               } />
+               <Route path={`tab/code/*`} element={
                   <RepoCode
                      ownerLogin={ownerLogin}
                      repo={repo}
                   />
-               </Route>
-            </Switch>
+               } />
+            </Routes>
          </div>
       </div>
    )

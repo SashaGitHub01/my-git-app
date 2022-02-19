@@ -45,6 +45,28 @@
 
 .code_column {
 }
+
+.head {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.back_btn {
+   background: transparent;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+}
+.back_icon {
+   font-size: 1.5rem;
+   margin-right: 0.31rem;
+}
+
+.back_btn span {
+   vertical-align: middle;
+   line-height: 1;
+}
+
 .download {
    padding: 15px 0;
    display: flex;

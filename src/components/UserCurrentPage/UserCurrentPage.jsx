@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from './UserCurrentPage.module.css';
-import { useParams } from "react-router";
+import {  useParams } from "react-router";
 import { useQuery } from "react-query";
 import UsersService from '../../API/UsersService'
 import { useAuth } from '../../hooks/useAuth'
@@ -9,8 +9,11 @@ import Loader from '../Loader/Loader';
 import UserAbout from "./UserAbout/UserAbout";
 import UserRepos from "./UserRepos/UserRepos";
 import { useEffect } from "react";
+import { useMatch } from 'react-router-dom'
 
 const UserCurrentPage = () => {
+   const match = useMatch('/profile/:userLogin')
+   console.log(match);
    const [isOwner, setIsOwner] = useState(false)
    const { userLogin } = useParams();
    const { user: me } = useAuth();

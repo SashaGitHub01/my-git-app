@@ -9,9 +9,6 @@ import Loader from "../Loader/Loader";
 import SmallLoader from "../SmallLoader/SmallLoader";
 import ReposForm from "./ReposForm/ReposForm";
 
-
-
-
 const Repos = () => {
    const [query, setQuery] = useState('');
    const perPage = 10;
@@ -43,9 +40,7 @@ const Repos = () => {
 
    useEffect(() => {
       window.addEventListener('scroll', handleScroll);
-
       return () => window.removeEventListener('scroll', handleScroll);
-
    }, [])
 
    if (isLoading) return <Loader />

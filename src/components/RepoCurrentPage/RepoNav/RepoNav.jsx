@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from './RepoNav.module.css';
 import useCurrentPath from '../../../hooks/useCurrentPath';
 
@@ -13,7 +13,6 @@ const items = [
 ]
 
 const RepoNav = () => {
-   const { url } = useRouteMatch();
    const location = useCurrentPath('code');
 
    return (
@@ -21,14 +20,15 @@ const RepoNav = () => {
          <div className={styles.nav_list}>
             {items.map(({ title, name }) => (
                <Link
-                  to={`${url}/tab/${name}`}
-                  children={title}
+                  to={`tab/${name}`}
                   data-name={name}
                   className={location === name
                      ? `${styles.nav_item} ${styles.active}`
                      : styles.nav_item}
                   key={title}
-               />
+               >
+                  {title}
+               </Link>
             ))}
          </div>
       </div>

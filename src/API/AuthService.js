@@ -2,7 +2,7 @@ import axios from "axios";
 
 class AuthService {
    static authUser = async () => {
-      const res = await axios.get('http://localhost:4000/authme', {
+      const res = await axios.get(`${process.env.REACT_APP_SERVER}/auth`, {
          headers: {
             'Access-Control-Allow-Credentials': true,
          },

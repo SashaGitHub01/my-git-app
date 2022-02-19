@@ -74,4 +74,5 @@
    display: block;
    padding: 5px 15px 7px 15px;
    border-radius: 25px;
+   cursor: pointer;
 }

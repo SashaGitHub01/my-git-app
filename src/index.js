@@ -10,16 +10,22 @@ import {
    QueryClientProvider,
 } from 'react-query';
 
-const client = new QueryClient({});
+const client = new QueryClient({
+   defaultOptions: {
+      queries: {
+         refetchOnWindowFocus: false,
+      },
+   },
+});
 
 ReactDOM.render(
-   <BrowserRouter>
-      <QueryClientProvider client={client}>
-         <AuthProvider>
+   <QueryClientProvider client={client}>
+      <AuthProvider>
+         <BrowserRouter>
             <App />
-         </AuthProvider>
-      </QueryClientProvider>
-   </BrowserRouter>,
+         </BrowserRouter>
+      </AuthProvider>
+   </QueryClientProvider>,
    document.getElementById('root')
 );
 

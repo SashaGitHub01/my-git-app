@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { Switch, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 import Loader from "../Loader/Loader";
 
 const Repos = lazy(() => import('../Repos/Repos'));
@@ -12,14 +12,15 @@ const UserCurrentPage = lazy(() => import("../UserCurrentPage/UserCurrentPage"))
 const AppRoute = () => {
    return (
       <Suspense fallback={<Loader />}>
-         <Switch>
-            <Route path='/repositories' component={Repos} />
-            <Route path='/login' component={Login} />
-            <Route path='/profile/:userLogin' component={UserCurrentPage} />
-            <Route exact path='/users' component={Users} />
-            <Route path='/:ownerLogin/:repo' component={RepoCurrentPage} />
-            <Route path='*' component={Error404} />
-         </Switch>
+         <Routes>
+            <Route index element={<Repos />} />
+            <Route path='/repositories' element={<Repos />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/profile/:userLogin' element={<UserCurrentPage />} />
+            <Route path='/users' element={<Users />} />
+            <Route path='/:ownerLogin/:repo/*' element={<RepoCurrentPage />} />
+            <Route path='*' element={<Error404 />} />
+         </Routes>
       </Suspense>
    )
 }

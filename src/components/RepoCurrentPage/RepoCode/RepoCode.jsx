@@ -6,16 +6,16 @@ import {
    BsFillFolderFill as Folder,
    BsFillFileEarmarkCodeFill as File
 } from 'react-icons/bs';
-import { MdOutlineArrowBackIosNew as Back } from 'react-icons/md'
+import { IoArrowBack as Back } from 'react-icons/io5'
 import { AiFillFileZip as Zip } from 'react-icons/ai'
 import base64 from 'base-64'
-
 import Loader from '../../Loader/Loader';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import prism from 'prismjs';
 import "prismjs/themes/prism-coy.css";
 
 const RepoCode = ({ ownerLogin, repo }) => {
+   const nav = useNavigate()
    const { pathname } = useLocation();
    const dir = pathname.split('/').slice(5).join('/');
 
@@ -36,12 +36,16 @@ const RepoCode = ({ ownerLogin, repo }) => {
       prism.highlightAll()
    }, [data])
 
+   const goBack = () => {
+      nav(-1)
+   }
+
    if (isLoading) return <Loader />
 
    return (
       <div className={styles.code_column}>
          <div className={styles.head}>
-            <button className={styles.back_btn}>
+            <button className={styles.back_btn} onClick={goBack}>
                <Back className={styles.back_icon} />
                <span>Back</span>
             </button>

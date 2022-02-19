@@ -1,13 +1,12 @@
 import React from "react";
 import logo from '../../assets/logo.png';
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from './Header.module.css';
 import { useAuth } from "../../hooks/useAuth";
 
 const Header = () => {
    const { user } = useAuth()
-   const history = useHistory();
-   const client_id = '9160c88ebb87dee9f012';
+   const nav = useNavigate();
 
    return (
       <header className={styles.header}>
@@ -16,18 +15,22 @@ const Header = () => {
                <img
                   src={logo}
                   alt="logo"
-                  onClick={() => history.push('/repositories')}
+                  onClick={() => nav('/repositories')}
                />
             </div>
             <nav className={styles.header_nav}>
                <ul className={styles.nav_list}>
                   <li className={styles.nav_link}>
                      {user
-                        ? <Link children='Profile' to={`/profile/${user.login}`} />
-                        : <Redirect to='/users' />}
+                        ? <Link to={`/profile/${user.login}`}>
+                           Profile
+                        </Link>
+                        : null}
                   </li>
                   <li className={styles.nav_link}>
-                     <Link children='Repositories' to='/repositories' />
+                     <Link to='/repositories'>
+                        Repositories
+                     </Link>
                   </li>
                   <li className={styles.nav_link}>
                      <Link children='Users' to='/users' />
@@ -44,8 +47,8 @@ const Header = () => {
                   </div>
                   : <div className={styles.signup}>
                      <a
+                        href={`${process.env.REACT_APP_SERVER}/auth`}
                         className={styles.signup_link}
-                        href={`https://github.com/login/oauth/authorize?client_id=${client_id}`}
                      >
                         Sign Up
                      </a>

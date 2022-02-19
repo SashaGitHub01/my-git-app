@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 
 const useCurrentPath = (defaultValue) => {
    const location = useLocation().pathname.split('/').slice(-2);
